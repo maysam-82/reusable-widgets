@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion component should render Accordion component 1`] = `
+<div
+  className="ui styled accordion container"
+>
+  <div
+    className="title "
+    onClick={[Function]}
+  >
+    <i
+      className="dropdown icon"
+    />
+    What is React?
+  </div>
+  <div
+    className="content "
+  >
+    <p>
+      React is a front end JavaScript framework.
+    </p>
+  </div>
+  <div
+    className="title "
+    onClick={[Function]}
+  >
+    <i
+      className="dropdown icon"
+    />
+    What use React?
+  </div>
+  <div
+    className="content "
+  >
+    <p>
+      React is a favorite JavaScript library among enginners.
+    </p>
+  </div>
+  <div
+    className="title "
+    onClick={[Function]}
+  >
+    <i
+      className="dropdown icon"
+    />
+    How do you use React?
+  </div>
+  <div
+    className="content "
+  >
+    <p>
+      You use React by creating components
+    </p>
+  </div>
+</div>
+`;
