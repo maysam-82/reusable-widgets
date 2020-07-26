@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link component should render Link component 1`] = `
+<a
+  className="test-class"
+  href="/test-route"
+  onClick={[Function]}
+>
+  Test Component
+</a>
+`;
