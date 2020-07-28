@@ -31,12 +31,12 @@ export const Search = () => {
 		search();
 	}, [debouncedTerm]);
 
-	const renderResult = searchResults.map(({ name, id, email }) => {
+	const renderResult = searchResults.map(({ name, id, body }) => {
 		return (
 			<div className="item" key={id}>
 				<div className="content">
 					<div className="header">{name}</div>
-					{email}
+					{body}
 				</div>
 			</div>
 		);
