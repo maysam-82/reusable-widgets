@@ -2,29 +2,34 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export const Search = () => {
-	const [searchTerm, setSearchTerm] = useState('');
+	const [searchTerm, setSearchTerm] = useState('lorem');
+	const [debouncedTerm, setDebouncedTerm] = useState(searchTerm);
 	const [searchResults, setSearchResults] = useState([]);
 
+	// Watch for changing of `searchTerm`
+	useEffect(() => {
+		const timerId = setTimeout(() => {
+			setDebouncedTerm(searchTerm);
+		}, 500);
+
+		// Return function is returned in the first render of component. As soon as the `searchTerm` is changed, cleanup function is invoked and then the overal function inside `useEffect` gets invoked again.
+		return () => {
+			clearTimeout(timerId);
+		};
+	}, [searchTerm]);
+
+	// Watch for changing `debouncedTerm`
 	useEffect(() => {
 		const search = async () => {
 			const { data } = await axios.get(
 				`http://jsonplaceholder.typicode.com/comments`
 			);
-			setSearchResults(data.filter((item) => item.name.includes(searchTerm)));
+			setSearchResults(
+				data.filter((item) => item.name.includes(debouncedTerm))
+			);
 		};
-
-		// debounce logic
-		const timeoutId = setTimeout(() => {
-			if (searchTerm) {
-				search();
-			}
-		}, 500);
-
-		// Return function is returned in the first render of component. As soon as the `searchTerm` is changed, cleanup function is invoked and then the overal function inside `useEffect` gets invoked again.
-		return () => {
-			clearTimeout(timeoutId);
-		};
-	}, [searchTerm]);
+		search();
+	}, [debouncedTerm]);
 
 	const renderResult = searchResults.map(({ name, id, email }) => {
 		return (
