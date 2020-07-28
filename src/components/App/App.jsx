@@ -4,6 +4,7 @@ import Route from '../Route';
 import { accordionItems } from '../../data/data';
 import Header from '../Header';
 import Search from '../Search';
+import Dropdown from '../Dropdown';
 import './app.css';
 
 const App = () => {
@@ -17,6 +18,10 @@ const App = () => {
 			<Route path="/search">
 				<h3 className="ui header widget-title">Search</h3>
 				<Search />
+			</Route>
+			<Route path="/dropdown">
+				<h3 className="ui header widget-title">Dropdown</h3>
+				<Dropdown />
 			</Route>
 		</div>
 	);
