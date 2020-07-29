@@ -11,6 +11,9 @@ const Header = () => {
 			<Link href="/search" className="ui secondary button">
 				Search
 			</Link>
+			<Link href="/dropdown" className="ui secondary button">
+				Dropdown
+			</Link>
 		</div>
 	);
 };

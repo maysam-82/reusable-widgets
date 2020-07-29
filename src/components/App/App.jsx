@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Accordion from '../Accordion';
 import Route from '../Route';
-import { accordionItems } from '../../data/data';
+import { accordionItems, dropDownOptions } from '../../data/data';
 import Header from '../Header';
 import Search from '../Search';
+import Dropdown from '../Dropdown';
 import './app.css';
 
 const App = () => {
+	const [selected, setSelected] = useState(dropDownOptions[0]);
 	return (
 		<div className="ui container">
 			<Header />
@@ -17,6 +19,15 @@ const App = () => {
 			<Route path="/search">
 				<h3 className="ui header widget-title">Search</h3>
 				<Search />
+			</Route>
+			<Route path="/dropdown">
+				<h3 className="ui header widget-title">Dropdown</h3>
+				<Dropdown
+					options={dropDownOptions}
+					title="Select a color"
+					selected={selected}
+					onSelectedChange={setSelected}
+				/>
 			</Route>
 		</div>
 	);

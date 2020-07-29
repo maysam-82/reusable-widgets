@@ -15,3 +15,10 @@ export const accordionItems = [
 		content: 'You use React by creating components',
 	},
 ];
+
+export const dropDownOptions = [
+	{ id: 1, label: 'The Color Red', value: 'red' },
+	{ id: 2, label: 'The Color Blue', value: 'blue' },
+	{ id: 3, label: 'The Color Yellow', value: 'yellow' },
+	{ id: 4, label: 'The Color Green', value: 'green' },
+];
