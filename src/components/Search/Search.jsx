@@ -22,7 +22,7 @@ export const Search = () => {
 	useEffect(() => {
 		const search = async () => {
 			const { data } = await axios.get(
-				`http://jsonplaceholder.typicode.com/comments`
+				`https://jsonplaceholder.typicode.com/comments`
 			);
 			setSearchResults(
 				data.filter((item) => item.name.includes(debouncedTerm))
