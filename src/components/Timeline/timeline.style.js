@@ -114,4 +114,25 @@ export const useStylesTimeline = createUseStyles({
         color: (style) =>
             style && style.titleColor ? style.titleColor : '#fff',
     },
+    timelineNotification: {
+        display: 'none',
+    },
+    '@media screen and (max-width: 960px)': {
+        timelineContainer: {
+            display: 'none',
+        },
+        timelineNotification: {
+            display: 'block',
+            padding: '0.75rem',
+            margin: '0 auto',
+            backgroundColor: '#000',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%,-50%)',
+            textAlign: 'center',
+            color: '#fff',
+            width: 'calc(100% - 2rem)',
+        },
+    },
 });
