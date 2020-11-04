@@ -47,7 +47,7 @@ function Timeline({ data, timeLineStyle }) {
                 </div>
             </div>
             <h2 className={classes.timelineNotification}>
-                This Feature Only Works In Desktop Screens
+                This Feature Only Works In Desktop View.
             </h2>
         </>
     );
